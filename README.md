@@ -61,3 +61,13 @@ The Swagger documentation is available at http://localhost:8080/api/swagger-ui/i
 ## Postman
 
 Postman collections are available in the `docs` folder.
+
+
+## CI/CD
+
+The application is configured to run on GitHub Actions. The following workflows are configured:
+
+- `develop.yml`: Builds the application and runs tests on every push to the `develop` branch.
+- `prd.yml`: Builds the application and runs tests on every push to the `main` branch.
+
+Please sse the action after pull request on related branchs (https://github.com/marvini86/video-api/actions)
