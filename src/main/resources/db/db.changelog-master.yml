@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: marvin
+      changes:
+        - sqlFile:
+            path: classpath:db/changelog/db-1.0.sql
