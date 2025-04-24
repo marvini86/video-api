@@ -137,7 +137,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/videos/stats/1",
+							"raw": "http://localhost:8080/api/v1/videos/1/stats",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -147,8 +147,8 @@
 								"api",
 								"v1",
 								"videos",
-								"stats",
-								"1"
+								"1",
+								"stats"
 							],
 							"query": [
 								{
@@ -185,7 +185,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/videos/play/1",
+							"raw": "http://localhost:8080/api/v1/videos/1/play",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -195,8 +195,8 @@
 								"api",
 								"v1",
 								"videos",
-								"play",
-								"1"
+								"1",
+								"play"
 							]
 						}
 					},
@@ -213,7 +213,7 @@
 								{
 									"key": "file",
 									"type": "file",
-									"src": "/C:/Users/Marcus Vinicius/Downloads/WIN_20250305_10_06_47_Pro.mp4"
+									"src": "/C:/Users/Marcus Vinicius/Downloads/1mb-example-video-file.mp4"
 								}
 							]
 						},
@@ -244,7 +244,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"videoUrl\": \"www\",\r\n    \"title\": \"Spider man 4\",\r\n    \"synopsis\": \"Its a dummy film\",\r\n    \"director\": \"Director\",\r\n    \"genre\": \"Terror\",\r\n    \"yearOfRelease\": 2023,\r\n    \"duration\": 300,\r\n    \"mainActor\":\"Maria\",\r\n    \"actors\": [\r\n        \"Julia\",\r\n        \"John\"\r\n    ]\r\n}",
+							"raw": "{\r\n    \"videoUrl\": \"https://www.youtube.com/watch?v=Iy61PiHgx88\",\r\n    \"title\": \"Spider man 4\",\r\n    \"synopsis\": \"Its a dummy film\",\r\n    \"director\": \"Director\",\r\n    \"genre\": \"Terror\",\r\n    \"yearOfRelease\": 2023,\r\n    \"duration\": 300,\r\n    \"mainActor\":\"Maria\",\r\n    \"actors\": [\r\n        \"Julia\",\r\n        \"John\"\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -277,7 +277,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"videoUrl\": \"www\",\r\n    \"title\": \"Dummy Film 3\",\r\n    \"synopsis\": \"Its a dummy film\",\r\n    \"director\": \"Director\",\r\n    \"genre\": \"Terror\",\r\n    \"yearOfRelease\": 2023,\r\n    \"duration\": 300,\r\n    \"mainActor\":\"Maria\",\r\n    \"actors\": [\r\n        \"John\",\r\n        \"Sara\"\r\n    ]\r\n}",
+							"raw": "{\r\n    \"videoUrl\": \"https://www.youtube.com/watch?v=Iy61PiHgx88\",\r\n    \"title\": \"Dummy Film 3\",\r\n    \"synopsis\": \"Its a dummy film\",\r\n    \"director\": \"Director\",\r\n    \"genre\": \"Terror\",\r\n    \"yearOfRelease\": 2023,\r\n    \"duration\": 300,\r\n    \"mainActor\":\"Maria\",\r\n    \"actors\": [\r\n        \"John\",\r\n        \"Sara\"\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -310,7 +310,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/videos/2",
+							"raw": "http://localhost:8080/api/v1/videos/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -320,7 +320,7 @@
 								"api",
 								"v1",
 								"videos",
-								"2"
+								"1"
 							]
 						}
 					},
