@@ -109,7 +109,7 @@ public class VideoStreamingService {
 
         log.info("Loading video: {}", id);
 
-        var videoStreaming = videoStreamingRepository.findById(id);
+        var videoStreaming = videoStreamingRepository.findByIdAndActive(id, true);
 
         if (videoStreaming.isEmpty()) {
             log.error("Video streaming not found: {}", id);
@@ -130,7 +130,7 @@ public class VideoStreamingService {
      * @return
      */
     public String getVideoUrl(Long id) {
-        var videoStreaming = videoStreamingRepository.findById(id);
+        var videoStreaming = videoStreamingRepository.findByIdAndActive(id, true);
 
         if (videoStreaming.isEmpty()) {
             log.error("Video streaming not found: {}", id);
@@ -151,7 +151,7 @@ public class VideoStreamingService {
      * @return
      */
     public VideoStatsDto getVideoStats(Long id) {
-        var videoStreaming = videoStreamingRepository.findById(id);
+        var videoStreaming = videoStreamingRepository.findByIdAndActive(id, true);
 
         if (videoStreaming.isEmpty()) {
             log.error("Video streaming not found: {}", id);
@@ -216,7 +216,7 @@ public class VideoStreamingService {
     public void updateVideoStreaming(Long id, VideoRequestDto videoStreaming) {
         log.info("Updating video streaming: {}", videoStreaming);
 
-        var videoStreamingEntity = videoStreamingRepository.findById(id);
+        var videoStreamingEntity = videoStreamingRepository.findByIdAndActive(id, true);
 
         if (videoStreamingEntity.isEmpty()) {
             log.error("Video streaming not found: {}", id);
@@ -283,7 +283,7 @@ public class VideoStreamingService {
     public void deleteVideoStreaming(Long id) {
         log.info("Deleting video streaming: {}", id);
 
-        var videoStreamingEntity = videoStreamingRepository.findById(id);
+        var videoStreamingEntity = videoStreamingRepository.findByIdAndActive(id, true);
 
         if (videoStreamingEntity.isEmpty()) {
             log.error("Video streaming not found: {}", id);

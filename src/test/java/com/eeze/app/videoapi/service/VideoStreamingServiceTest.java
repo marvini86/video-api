@@ -102,7 +102,7 @@ class VideoStreamingServiceTest {
 
     @Test
     void getVideo_shouldReturnDtoAndIncrementImpression() {
-        when(videoStreamingRepository.findById(1L)).thenReturn(Optional.of(mockVideo));
+        when(videoStreamingRepository.findByIdAndActive(1L,true)).thenReturn(Optional.of(mockVideo));
 
         var result = service.getVideo(1L);
 
@@ -112,14 +112,14 @@ class VideoStreamingServiceTest {
 
     @Test
     void getVideo_shouldThrowWhenNotFound() {
-        when(videoStreamingRepository.findById(99L)).thenReturn(Optional.empty());
+        when(videoStreamingRepository.findByIdAndActive(99L, true)).thenReturn(Optional.empty());
 
         assertThrows(DataNotFound.class, () -> service.getVideo(99L));
     }
 
     @Test
     void getVideoUrl_shouldReturnUrlAndIncrementView() {
-        when(videoStreamingRepository.findById(1L)).thenReturn(Optional.of(mockVideo));
+        when(videoStreamingRepository.findByIdAndActive(1L, true)).thenReturn(Optional.of(mockVideo));
 
         var url = service.getVideoUrl(1L);
 
@@ -129,7 +129,7 @@ class VideoStreamingServiceTest {
 
     @Test
     void getVideoStats_shouldReturnStats() {
-        when(videoStreamingRepository.findById(1L)).thenReturn(Optional.of(mockVideo));
+        when(videoStreamingRepository.findByIdAndActive(1L, true)).thenReturn(Optional.of(mockVideo));
 
         var stats = service.getVideoStats(1L);
 
@@ -139,7 +139,7 @@ class VideoStreamingServiceTest {
 
     @Test
     void deleteVideoStreaming_shouldDeactivateVideo() {
-        when(videoStreamingRepository.findById(1L)).thenReturn(Optional.of(mockVideo));
+        when(videoStreamingRepository.findByIdAndActive(1L, true)).thenReturn(Optional.of(mockVideo));
 
         service.deleteVideoStreaming(1L);
 
@@ -151,7 +151,7 @@ class VideoStreamingServiceTest {
 
     @Test
     void deleteVideoStreaming_shouldThrowIfNotFound() {
-        when(videoStreamingRepository.findById(99L)).thenReturn(Optional.empty());
+        when(videoStreamingRepository.findByIdAndActive(99L, true)).thenReturn(Optional.empty());
 
         assertThrows(DataNotFound.class, () -> service.deleteVideoStreaming(99L));
     }
@@ -219,7 +219,7 @@ class VideoStreamingServiceTest {
                 .actors(new HashSet<>())
                 .build();
 
-        when(videoStreamingRepository.findById(id)).thenReturn(Optional.of(existingVideo));
+        when(videoStreamingRepository.findByIdAndActive(id, true)).thenReturn(Optional.of(existingVideo));
 
         var updatedMainActor = Actor.builder().name("Updated Main Actor").build();
         when(actorRepository.findByName("Updated Main Actor")).thenReturn(Optional.of(updatedMainActor));
