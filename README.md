@@ -34,7 +34,7 @@ The **Video Streaming API** provides a robust and scalable backend for managing 
 ## 🧰 Technologies
 
 - Java 17
-- Spring Boot
+- Spring Boot 3.4.4
 - H2
 - Liquibase
 - Docker
