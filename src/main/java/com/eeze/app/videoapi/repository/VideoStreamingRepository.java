@@ -7,11 +7,14 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import java.util.List;
+import java.util.Optional;
 
 public interface VideoStreamingRepository extends JpaRepository<VideoStreaming, Long> {
 
     Page<VideoStreaming> findAllByActive(Boolean active, Pageable pageable);
+
+    Optional<VideoStreaming> findByIdAndActive(Long id, Boolean active);
+
 
 
     @Query("""
