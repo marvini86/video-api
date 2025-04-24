@@ -1,10 +1,37 @@
-# 📄 Video Streaming API
+# 📺 Video Streaming API
 
 ## Description
 
-Backend API service that manages **videos**. The service must allow users to upload, search, and download videos while efficiently handling resources.
+The **Video Streaming API** provides a robust and scalable backend for managing video content, metadata, and streaming-related operations. Designed for use in media platforms, content distribution systems, or educational streaming services, this API offers endpoints for uploading, publishing, searching, and analyzing videos.
 
-## Technologies Used
+---
+
+## 🔧 Features
+
+- Upload and publish video content
+- Retrieve detailed video metadata and summaries
+- Search for videos based on multiple criteria (title, genre, director, etc.)
+- Track video statistics like views and impressions
+- Manage relationships between videos and actors (cast and main actor)
+- Perform CRUD operations on video entities
+
+
+## Endpoints
+
+| Method | Endpoint                       | Description                                     |
+|--------|--------------------------------|-------------------------------------------------|
+| GET    | `/v1/videos`                   | List paginated videos with optional sorting     |
+| POST   | `/v1/videos`                   | Publish a new video with metadata               |
+| GET    | `/v1/videos/{id}`              | Retrieve full details of a video by ID          |
+| POST   | `/v1/videos/{id}/play`         | Simulate playing a video and retrieve URL       |
+| POST   | `/v1/videos/search`            | Search videos by filters                        |
+| GET    | `/v1/videos/{id}/stats`        | Get video view and impression statistics        |
+| PUT    | `/v1/videos/{id}`              | Update existing video details                   |
+| DELETE | `/v1/videos/{id}`              | Delete a video                                  |
+| POST   | `/v1/videos/upload`            | Upload a video file for processing              |
+
+
+## 🧰 Technologies
 
 - Java 17
 - Spring Boot
@@ -13,61 +40,55 @@ Backend API service that manages **videos**. The service must allow users to upl
 - Docker
 - GitHub Actions(CI/CD)
 - Swagger
-- Postman
 
+## 🚀 Running the Application
 
-## Endpoints
-
-| Method | Endpoint              | Description |
-| ------ |-----------------------| ----------- |
-| GET    | /v1/videos            | Get all videos |
-| GET    | /v1/videos/{id}       | Get video by id |
-| GET    | /v1/videos/{id}/stats | Get video stats by id |
-| POST   | /v1/videos            | Publish video |
-| POST   | /v1/videos/upload     | Upload video |
-| POST   | /v1/videos/search     | Search videos |
-| POST   | /v1/videos/{id}/play  | Play video by id |
-| PUT    | /v1/videos/{id}       | Update video by id |
-| DELETE | /v1/videos/{id}       | Delete video by id |
-
-<img src="docs/api.png" width="600">
-
-## Testing the application
-
-To test the application, use the following command:
+You can run the application using Docker Compose:
 
 ```
 docker-compose up --build
 
 ```
-or
+Or using Maven directly:
+
 ```
 mvn spring-boot:run
 ```
 
 
-## Run tests
+## ✅ Run tests
 
-To run tests, use the following command:
+To execute tests, run:
+
 
 ```
 mvn verify
 ```
 
-## Swagger
+## 📘 Swagger
 
-The Swagger documentation is available at http://localhost:8080/api/swagger-ui/index.html.
+API documentation is available via Swagger UI at:http://localhost:8080/api/swagger-ui/index.html.
 
-## Postman
+## 📬 Postman
 
 Postman collections are available in the `docs` folder.
 
 
-## CI/CD
+## 🔄 CI/CD
 
-The application is configured to run on GitHub Actions. The following workflows are configured:
+![Build - Develop](https://github.com/marvini86/video-api/actions/workflows/develop.yml/badge.svg)
+![Build - Main](https://github.com/marvini86/video-api/actions/workflows/prd.yml/badge.svg)
 
-- `develop.yml`: Builds the application and runs tests on every push to the `develop` branch.
-- `prd.yml`: Builds the application and runs tests on every push to the `main` branch.
+This project uses **GitHub Actions** for continuous integration and deployment.
 
-Please sse the action after pull request on related branchs (https://github.com/marvini86/video-api/actions)
+### 🛠️ Configured Workflows
+
+| Workflow Name | Branch Trigger | Description                                |
+|---------------|----------------|--------------------------------------------|
+| `develop.yml` | `develop`      | Builds the app and runs tests on every push |
+| `prd.yml`     | `main`         | Builds the app and runs tests on every push |
+
+### 🔍 Check Workflow Runs
+
+You can view the latest pipeline activity here:  
+👉 [**GitHub Actions Dashboard**](https://github.com/marvini86/video-api/actions)
