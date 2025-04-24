@@ -11,6 +11,7 @@ Backend API service that manages **videos**. The service must allow users to upl
 - H2
 - Liquibase
 - Docker
+- GitHub Actions(CI/CD)
 - Swagger
 - Postman
 

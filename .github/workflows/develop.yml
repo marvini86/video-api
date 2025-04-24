@@ -39,16 +39,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Set up JDK 17
-        uses: actions/setup-java@v2
-        with:
-          java-version: '17'
-          distribution: 'temurin'
 
-      - name: Release Build Artifact
+      - name: Helm install app on Kubernetes (simulated)
         run: |
-          mvn clean deploy -DskipTests=true
-
-      - name: Simulate Artifact Deployment
-        run: echo "Simulating artifact deployment to dev..."
-
+          echo "Installing app on Kubernetes..."
+            
